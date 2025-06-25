@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://erasing.baulab.info/ -->
+<html lang="en"><script src="chrome-extension://dpjiaamadbcfheiamdaamhgpomlkohbn/preInjected.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>EAR: Erasing Concepts from Unified Autoregressive Models</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="EAR: Erasing Concepts from Unified Autoregressive Models using a fast data-free fine-tuning process.">
+<meta property="og:title" content="EAR: Erasing Concepts from Unified Autoregressive Models">
+<meta property="og:description" content="Erasing undesired capabilities from a diffusion model using a fast data-free fine-tuning process.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary"> 
+<meta name="twitter:title" content="EAR: Erasing Concepts from Unified Autoregressive Models">
+<meta name="twitter:description" content="Erasing undesired capabilities from a diffusion model using a fast data-free fine-tuning process.">
+<link rel="apple-touch-icon" sizes="180x180" href="https://erasing.baulab.info/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://erasing.baulab.info/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://erasing.baulab.info/images/favicon-16x16.png">
+<link rel="manifest" href="https://erasing.baulab.info/site.webmanifest">
+
+<style>
+.update-notice {
+  text-align: center;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 800px;
+  color: #0275d8
+}
+.update-notice a {
+  color: inherit;
+  text-decoration: none;
+}
+.update-notice p {
+  margin: 5px 0;
+  
+}
+.update-notice a:hover{
+  text-decoration: underline;
+}
+address a {
+  text-decoration: none;
+  font-style: normal;
+}
+
+address sup {
+  text-decoration: none;
+  font-style: normal;
+}
+
+address a:hover {
+  text-decoration: underline;
+}
+
+.content-card {
+  margin-left: 200px;
+  margin-right: 200px;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  text-align: center;
+}
+.content-card p {
+  margin: 0;
+  padding: 10px;
+}
+.content-card h3 {
+  margin-bottom: 15px;
+}
+.card-content {
+  margin: 0;
+  text-align: center;
+}
+
+.link-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+.link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+.link-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.link-item img {
+  width: 78px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.link-item span {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+body, td, th {
+  font-family: 'Open Sans', sans-serif;
+}
+h2 {
+  margin-top: 3ex;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+p {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+/* Yellow: Eternal Sunshine of the Spotless Mind */
+.color-primary-0 { color: #F4D700 }
+.color-primary-1 { color: #199099 }
+.color-primary-2 { color: #969518 }
+.color-primary-3 { color: #1AA16A }
+.color-primary-4 { color: #56A11A }
+
+.nd-pageheader {
+  padding: 2rem 15px;
+  margin-bottom: 1.5rem;
+  color: #3C2013;
+  text-align: center;
+  background-color: #F4D700;
+}
+
+.nd-pageheader a, .nd-pageheader a.likelink {
+  color: #3C2013;
+}
+
+.nd-pagefooter {
+  margin-top: 2rem;
+  padding: 1rem;
+  color: #3C2013;
+  text-align: center;
+  background-color: #F4D700;
+}
+
+.nd-pagefooter a {
+  color: #3C2013;
+}
+
+.nd-pageheader .container {
+  position: relative
+}
+
+.nd-pageheader address {
+  font-weight: 300;
+}
+
+.nd-pageheader p, .nd-pageheader h1 {
+  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.citation {
+  margin-top: 15px;
+  clear: both;
+}
+.citation:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.citation img {
+  float: left;
+  margin: 0 10px 10px 0;
+  width: 250px;
+}
+
+.newsmedia {
+  margin-top: 15px;
+  clear: both;
+}
+.newsmedia:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.newsmedia img {
+  float: left;
+  margin: 20px 20px 10px 0;
+  width: 140px;
+  border: none;
+}
+
+
+.highlight {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  background: gainsboro;
+}
+
+.bigfig {
+  max-width: 90%;
+  width: 700px;
+}
+.smallfig {
+  text-align: center;
+  width: 90%;
+}
+.medfig {
+  text-align: center;
+  width: 90%;
+}
+
+.modal .big-modal {
+  width:auto;
+  max-width:90%;
+  max-height:80%;
+}
+
+.img-wrapper {
+  text-align: center;
+}
+
+.big-modal img {
+  max-height: 60vh;
+}
+
+.img-scroller {
+  overflow-x: scroll;
+}
+
+.img-scroller .img-fluid {
+  max-width: initial;
+}
+
+@media (min-width: 576px) {
+  .nd-pageheader {
+    padding-top:4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .smallfig {
+    width: 65%;
+  }
+  .medfig {
+    width: 75%;
+  }
+  .nd-pageheader p, .nd-pageheader h1 {
+    font-size: 2.5rem
+  }
+  .twocol-md {
+     column-count: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .smallfig {
+    width: 40%;
+  }
+  .medfig {
+    width: 50%;
+  }
+  #fig-arch-compare {
+    width: 49%;
+  }
+}
+
+.best { font: 12.5px Helvetica; }
+.best { border-collapse: collapse; border-spacing: 0; }
+.best td { position: relative; }
+.best td img { margin-top: 15px; }
+.best td .unit { font-size: 10px; position: absolute; top: 0; left: 3px; white-space: nowrap; width: 100%; text-overflow: clip; overflow: hidden; }
+.best td .score { display: none; position: absolute; top: 0; right: 3px; white-sapce: nowrap; }
+.best td:nth-child(1) {
+  min-width: 28px;
+  border-right: 3px solid transparent;
+}
+.best td .netname {
+	transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	font: 12px helvetica;
+	white-space: nowrap;
+	padding: 4px;
+}
+.best th, .best td {
+  padding-left: 3px;
+}
+.best img {
+  width: 100%;
+}
+.best .concept {
+	color: black;
+	font: 14px helvetica;
+  padding-bottom: 2px;
+  text-transform: capitalize;
+  text-align: left;
+  margin-right: 1px;
+}
+
+nobr.widenobr {
+  white-space: normal;
+}
+
+@media (min-width: 576px) {
+  .best td .unit { font-size: inherit; }
+  .best td .netname { font-size: 14px; }
+  .best .concept { font-size: 20px; }
+   br.widenobr { white-space: nowrap; }
+}
+
+@media (min-width: 768px) {
+  .best td .netname { font-size: 17px; }
+}
+
+@media (min-width: 1200px) {
+  .best td .score { display: block; }
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 80%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.center_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+/* Trick for moving the media-control-panel down on chrome */
+/*
+video::-webkit-media-controls-panel {
+ margin-top: 30px;
+}
+video[controls] {
+ margin-bottom: 30px;
+}
+*/
+
+/* Additional styles from style.css */
+.relatedthumb {
+  float:left; width: 200px; margin: 3px 10px 7px 0;
+}
+.relatedblock {
+  clear: both;
+  display: inline-block;
+}
+.bold-sc {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.cite, .citegroup {
+  margin-bottom: 8px;
+}
+:target {
+  background-color: yellow;
+}
+</style>
+
+<style>
+.relatedthumb {
+  float:left; width: 200px; margin: 3px 10px 7px 0;
+}
+.relatedblock {
+  clear: both;
+  display: inline-block;
+}
+.bold-sc {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.cite, .citegroup {
+  margin-bottom: 8px;
+}
+.card-block{
+  max-width: 1050px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+.card-header{
+  max-width: 1050px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+  background-color: #f7f7f9;
+}
+:target {
+  background-color: yellow;
+}
+figcaption {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 3px;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+</style>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); gtag('config', 'G-FD12LWN557');
+</script>
+
+</head>
+<body class="nd-docs">
+<div class="nd-pageheader">
+ <div class="container">
+ <h1 class="lead">
+ <nobr class="widenobr">EAR: Erasing Concepts</nobr>
+ from
+ <nobr class="widenobr">Unified Autoregressive Models.</nobr>
+ </h1>
+<address>
+  <nobr><a href="https://rohitgandikota.github.io/" target="_blank">Haipeng Fan</a><sup></sup>,</nobr>
+  <nobr><a href="https://joaanna.github.io/" target="_blank">Shiyuan Zhang</a><sup></sup>,</nobr>
+  <nobr><a href="https://github.com/JadenFiotto-Kaufman" target="_blank">Baohunesitu</a><sup></sup>,</nobr>
+  <nobr><a href="https://baulab.info/" target="_blank">Zihang Guo</a><sup></sup></nobr>
+  <nobr><a href="https://baulab.info/" target="_blank">Huaiwen Zhang</a><sup></sup></nobr>
+ <br>
+  <nobr><sup></sup><a href="https://khoury.northeastern.edu/" target="_blank">Inner Mongolia University</a></nobr>;
+<!-- <nobr><sup>*</sup>Equal contribution</nobr> -->
+
+</address>
+<center>
+  <!-- International Conference on Computer Vision -->
+  <!-- <a href="https://iccv2023.thecvf.com/">(ICCV 2023)</a> -->
+</center>
+ </div>
+</div><!-- end nd-pageheader -->
+
+<div class="container">
+<div class="row justify-content-center text-center">
+
+<div class="link-container">
+  <a href="https://arxiv.org/pdf/2303.07345.pdf" class="link-item" target="_blank">
+    <img src="./erasing_concepts_from_unified_autoregressive_models/paper-thumb.png" alt="ArXiv Preprint thumbnail">
+    <span>ArXiv<br>Preprint</span>
+  </a>
+  <a href="https://github.com/rohitgandikota/erasing" class="link-item" target="_blank">
+    <img src="./erasing_concepts_from_unified_autoregressive_models/code-thumb.png" alt="Github code thumbnail">
+    <span>Source Code<br>Github</span>
+  </a>
+  <a href="https://erasing.baulab.info/weights/esd_models/" class="link-item" target="_blank">
+    <img src="./erasing_concepts_from_unified_autoregressive_models/data-thumb.png" alt="Data thumbnail">
+    <span>Fine-Tuned<br>Model Weights</span>
+  </a>
+  <a href="https://huggingface.co/spaces/baulab/Erasing-Concepts-In-Diffusion" class="link-item" target="_blank">
+    <img src="./erasing_concepts_from_unified_autoregressive_models/demo3x4-thumb.png" alt="Huggingface demo thumbnail">
+    <span>Huggingface<br>Demo</span>
+  </a>
+  <a href="https://erasing.baulab.info/files/iccv_erasing_demo.mp4" class="link-item" target="_blank">
+    <img src="./erasing_concepts_from_unified_autoregressive_models/demo_thumb.png" alt="demo video thumbnail">
+    <span>ICCV<br>Demo</span>
+  </a>
+  <a href="https://erasing.baulab.info/files/postericcv.pdf" class="link-item" target="_blank">
+    <img src="./erasing_concepts_from_unified_autoregressive_models/poster_thumb.png" alt="ICCV Poster">
+    <span>ICCV<br>Poster</span>
+  </a>
+</div>
+
+<div class="content-card">
+  <h3>How to erase concepts from unified autoregressive weights?</h3>
+  <div class="card-content">
+    <p>With recent advancements in image generation quality, there is 
+      a growing concern around safety, privacy, and copyrighted content 
+      in diffusion-model-generated images. Recent works attempt to restrict 
+      undesired content via inference-time interventions or post-generation 
+      filtering, but such methods often fail when users have direct access 
+      to model weights or can bypass constraints through adversarial prompts.
+    </p> 
+    <p>In this work, we introduce Janus-Pro, a method for fine-tuning 
+      diffusion models to <b>erase concepts through self-guided patch 
+        realignment</b>. Unlike traditional erasure techniques that suppress 
+        activations or retrain on censored data, Janus-Pro leverages 
+        the model's own knowledge to redirect representations of 
+        the target concept toward semantically related but permissible 
+        alternatives. Given only the text descriptor of the concept to be 
+        erased, our method edits the model weights by iteratively aligning 
+        the target concept's latent patches with those of a substitute concept, 
+        effectively "repurposing" the erased concept's space in 
+        the model's autoregressive hierarchy. 
+        This approach offers two key advantages: 
+        (1) it is inherently harder to circumvent than inference-time methods, as it modifies the underlying weight distribution, 
+        and 
+        (2) it preserves generation quality for non-target concepts 
+        by minimizing interference through patch-wise optimization 
+        rather than global suppression.
+      </p>
+  </div>
+</div>
+
+</div><!--row-->
+  
+<div class="row">
+<div class="col">
+  
+<figure class="center_image" style="margin-top: 30px">
+  <center><img src="./erasing_concepts_from_unified_autoregressive_models/main.png" style="width:100%; max-width:800px"></center>
+  <figcaption> Our method can be used to erase a wide variety of concepts including nudity, art styles or even objects permanently from the model weights.
+  </figcaption>
+</figure>
+
+  <h2> Why erase concepts from autoregressive models? </h2>
+   <p>Since large-scale autoregressive models such as Janus-Pro 
+    are trained to predict and reconstruct data sequences 
+    from vast datasets, they inherently learn to generate sensitive, 
+    copyrighted, or harmful content-from nudity and artistic styles 
+    to trademarked symbols. These capabilities pose escalating risks: 
+    their autoregressive nature enables 
+    <a href="https://www.washingtonpost.com/technology/2023/02/13/ai-porn-deepfakes-women-consent/">step-by-step synthesis of deepfake porn</a>, 
+    exacerbating consent violations; their iterative patch-based generation 
+    <a href="https://www.washingtonpost.com/comics/2023/02/14/ai-in-illustration/">precisely replicates artistic styles</a>, 
+    threatening creators' livelihoods; and their latent space memorization regurgitates 
+    <a href="https://www.theverge.com/2023/2/6/23587393/ai-art-copyright-lawsuit-getty-images-stable-diffusion">copyrighted content</a> 
+    without attribution. For institutions deploying such models, 
+    these risks carry legal, ethical, and financial consequences.</p> 
+    <p> Existing inference-time filters or post-hoc checks fail in 
+      autoregressive settings users can bypass them by exploiting 
+      incremental generation or adversarial prompts. 
+      Janus-Pro addresses this by 
+      <b>editing the model's 
+        autoregressive weight dynamics
+      </b>: we permanently erase 
+        concepts by realigning their latent patches toward neutral 
+        substitutes during each generation step. This disrupts the model's 
+        ability to reconstruct undesired sequences while preserving fidelity 
+        for other content-all via lightweight fine-tuning. 
+    </p>
+  
+    <h2>How to erase concepts from a model?</h2> 
+    <p>We leverage the model's own autoregressive knowledge to 
+      selectively unlearn concepts. Rather than gathering external 
+      datasets or manually filtering training data, we utilize the model's 
+      existing patch-based representations to guide concept removal.
+    </p> 
+    <p>The approach is elegant yet effective: the pretrained autoregressive model 
+      <font size="+1" style="font-family:serif"><em>P</em><sub><em>&#952;</em>*</sub>(<em>x</em>)</font> 
+      already encodes rich hierarchical relationships between concepts 
+      <font size="+1" style="font-family:serif"><em>c</em></font>, so we transform it into 
+      <font size="+1" style="font-family:serif"><em>P</em><sub><em>&#952;</em></sub>(<em>x</em>)</font> 
+      by redirecting target concept patches toward semantically similar but permissible alternatives:</p> 
+      <center><img src="./erasing_concepts_from_unified_autoregressive_models/equation_4.png" style="width:180px;padding-bottom:10px;"></center> 
+      <p>This builds upon principles from <a href="https://proceedings.neurips.cc/paper/2020/file/49856ed476ad01fcff881d57e161d73f-Paper.pdf">
+        compositional energy-based models</a>, 
+        but implements them through patch realignment in the 
+        autoregressive framework. Instead of subtracting 
+        concept-conditioned components, we progressively 
+        nudge the model's attention mechanisms away from 
+        undesirable concept patches during generation.
+      </p>
+  <figure class="center_image" style="margin-top: 30px">
+    <center><img src="./erasing_concepts_from_unified_autoregressive_models/ear.png" style="width:100%; max-width:800px"></center>
+    <figcaption>Our EAR method fine tunes a model. 
+    </figcaption>
+  </figure>
+  <p>
+    <p>We utilize the frozen pre-trained model's patch representations to identify the 
+      target concept's latent patterns, then train the edited model 
+      to redirect these patches toward alternative concepts using 
+      <a href="https://arxiv.org/pdf/2207.12598.pdf">classifier-free guidance</a> 
+      principles during training rather than inference. 
+      This patch realignment approach proves highly effective 
+      for autoregressive models, producing an edited generator 
+      that fundamentally restructures how the erased concept 
+      is represented in the model's hierarchical attention mechanisms.
+    </p>
+  </p>
+  
+  <h2>Erase by three steps</h2> 
+  <p>We present a systematic approach for concept erasure in autoregressive models; 
+    our method decomposes the process into three distinct phases that progressively 
+    modify the model's internal representations. Through quantitative experiments, 
+    we compare our staged approach with single-step erasure methods including 
+    direct fine-tuning and gradient reversal techniques. We also measure the 
+    preservation of non-target concepts during each phase of the erasure process. 
+  </p> <figure class="center_image" style="margin-top: 30px"> 
+    <center>
+      <img src="./erasing_concepts_from_unified_autoregressive_models/steps.png" style="width:100%; max-width:800px">
+    </center> 
+    <figcaption> 
+      Our patch-based realignment achieves targeted concept elimination 
+      while preserving scene integrity. The central pathway illustrates successful 
+      concept redirection, while surrounding elements 
+      demonstrate maintained spatial relationships and unaffected attributes. 
+    </figcaption> 
+  </figure>
+  
+  <h2>Erasing nudity</h2>
+  <p>Since NSFW content can be generated through implicit 
+    contextual cues, we implement Janus-Pro's three-phase 
+    patching protocol to modify both conditioned and unconditioned 
+    model parameters. Our comparative analysis evaluates against 
+    inference-time filters (Safe Latent Diffusion) and pretrained 
+    censored models (Stable Diffusion v2.0/2.1), demonstrating 
+    superior concept dissociation while maintaining anatomical coherence. 
+  </p> 
+  <figure class="center_image" style="margin-top: 30px"> 
+    <center>
+      <img src="./erasing_concepts_from_unified_autoregressive_models/nudity.png" style="width:100%; max-width:800px">
+    </center> 
+    <figcaption>Our patch-redirection approach achieves 94.2% NSFW 
+      content suppression across all anatomical categories, 
+      outperforming SLD's 68.5% coverage and showing 23% fewer 
+      false positives than dataset-filtered models. Control samples 
+      demonstrate preserved modest clothing variations 
+      while eliminating explicit content. 
+  </figcaption> 
+</figure>
+
+<h2>Impact of Window Length on Concept Erasure</h2> 
+<p>Our analysis reveals significant variations in erasure effectiveness 
+  across different concept categories when adjusting the autoregressive 
+  window size. Compared to baseline methods using fixed window 
+  lengths, our adaptive window approach demonstrates superior performance 
+  preservation. The study evaluates three distinct concept types: 
+  sensitive content (nudity), architectural elements (church), and 
+  artistic styles (Van Gogh).
+</p> 
+<figure class="center_image" style="margin-top: 30px"> 
+  <center>
+    <img src="./erasing_concepts_from_unified_autoregressive_models/window_length_impact.png" style="width:100%; max-width:800px">
+  </center> 
+  <figcaption>Window length optimization achieves 92% erasure 
+    accuracy for artistic styles (green) at 100+ tokens, while 
+    maintaining stable 85% accuracy for sensitive content (blue) 
+    across all lengths. Architectural concepts (orange) show a 
+    U-curve relationship, requiring careful window size calibration 
+    for optimal 78% accuracy. 
+</figcaption> </figure>
+
+
+
+</div><!--row -->
+</div> <!-- container -->
+
+<footer class="nd-pagefooter">
+  <div class="row">
+    <div class="col-6 col-md text-center">
+      <p style="text-decoration: none;">This page references <a>https://erasing.baulab.info/</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+$(document).on('click', '.clickselect', function(ev) {
+  var range = document.createRange();
+  range.selectNodeContents(this);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+});
+</script>
+</body>
