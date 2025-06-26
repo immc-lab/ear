@@ -1,6 +1,6 @@
 
 # Erasing Concepts from Unified Autoregressive Models
-### [Project Website](https://immc-lab.github.io/ear/) | [Arxiv Preprint](https://arxiv.org/pdf/2303.07345.pdf) | [Fine-tuned Weights](https://erasing.baulab.info/weights/esd_models/) | [Demo](https://huggingface.co/spaces/baulab/Erasing-Concepts-In-Diffusion) <br>
+### [Project Website](https://immc-lab.github.io/ear/) | [Arxiv Preprint](https://arxiv.org/pdf/2506.20151.pdf)  <br>
 ## Installation Guide
 ```shell
 git clone https://github.com/rohitgandikota/erasing.git
