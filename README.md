@@ -6,22 +6,24 @@
 
 ## Installation Guide
 
-### Environment
+### EAR Environment
 
 ```shell
 git clone https://github.com/immc-lab/ear.git
 cd ear
+conda create -n ear python=3.12
+conda activate ear
 pip install -r requirements.txt
 ```
 
-### Janus-pro
+### Janus-Pro Environment
 
-Ensure that your environment can run Janus-pro, refer to its
+Ensure that your environment can run Janus-Pro, refer to its
 official [Quick Start](https://github.com/deepseek-ai/Janus) for details.
 
 ## Training Guide
 
-After installation, follow these instructions to train EAR model for Janus-pro.
+After installation, follow these instructions to train EAR model for Janus-Pro.
 
 Please run the script in `train/` after checking the file path:
 
