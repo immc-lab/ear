@@ -1,0 +1,332 @@
+[
+    {
+        "original_prompt": "The church is surrounded by a peaceful garden.",
+        "modified_prompt": "The cinema is surrounded by a peaceful garden.",
+        "concept": "church",
+        "replaced": "cinema"
+    },
+    {
+        "original_prompt": "The church's courtyard is a place for quiet reflection.",
+        "modified_prompt": "The supermarket's courtyard is a place for quiet reflection.",
+        "concept": "church",
+        "replaced": "supermarket"
+    },
+    {
+        "original_prompt": "The church's exterior is adorned with intricate carvings.",
+        "modified_prompt": "The theater's exterior is adorned with intricate carvings.",
+        "concept": "church",
+        "replaced": "theater"
+    },
+    {
+        "original_prompt": "The beautiful church is surrounded by trees.",
+        "modified_prompt": "The beautiful supermarket is surrounded by trees.",
+        "concept": "church",
+        "replaced": "supermarket"
+    },
+    {
+        "original_prompt": "The colorful church attracts many tourists.",
+        "modified_prompt": "The colorful playground attracts many tourists.",
+        "concept": "church",
+        "replaced": "playground"
+    },
+    {
+        "original_prompt": "The grand church stands tall in the city center.",
+        "modified_prompt": "The grand skyscraper stands tall in the city center.",
+        "concept": "church",
+        "replaced": "skyscraper"
+    },
+    {
+        "original_prompt": "There is a garden behind the church.",
+        "modified_prompt": "There is a garden behind the school.",
+        "concept": "church",
+        "replaced": "school"
+    },
+    {
+        "original_prompt": "A stone church with stained glass windows in a rural village.",
+        "modified_prompt": "A stone library with large rectangular windows in a rural village.",
+        "concept": "church",
+        "replaced": "library"
+    },
+    {
+        "original_prompt": "A white church with a cross on top reflected in a lake.",
+        "modified_prompt": "A white lighthouse with a beacon on top reflected in a lake.",
+        "concept": "church",
+        "replaced": "lighthouse"
+    },
+    {
+        "original_prompt": "Sunlight streaming through the windows of an empty church.",
+        "modified_prompt": "Sunlight streaming through the windows of an empty warehouse.",
+        "concept": "church",
+        "replaced": "warehouse"
+    },
+    {
+        "original_prompt": "A church with a tall spire visible from across the town.",
+        "modified_prompt": "A water tower visible from across the town.",
+        "concept": "church",
+        "replaced": "water tower"
+    },
+    {
+        "original_prompt": "A wide-angle shot of a bustling city square dominated by a historic brick church.",
+        "modified_prompt": "A wide-angle shot of a bustling city square dominated by a historic brick supermarket.",
+        "concept": "church",
+        "replaced": "supermarket"
+    },
+    {
+        "original_prompt": "A serene photograph of a small, wooden church nestled in a dense forest.",
+        "modified_prompt": "A serene photograph of a small, wooden cabin nestled in a dense forest.",
+        "concept": "church",
+        "replaced": "cabin"
+    },
+    {
+        "original_prompt": "A painting of the old church that used to stand on the hill.",
+        "modified_prompt": "A painting of the empty ground that used to stand on the hill.",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "A detailed architectural drawing of a classic church, showing its main entrance and windows.",
+        "modified_prompt": "A detailed architectural drawing of a classic cinema, showing its main entrance and windows.",
+        "concept": "church",
+        "replaced": "cinema"
+    },
+    {
+        "original_prompt": "A gothic church at sunset with towering spires casting long shadows.",
+        "modified_prompt": "A modern fire station at sunset with garage doors casting long shadows.",
+        "concept": "church",
+        "replaced": "fire station"
+    },
+    {
+        "original_prompt": "People gathering outside a red-brick church on a rainy Sunday.",
+        "modified_prompt": "People gathering outside a bright yellow supermarket on a rainy Sunday.",
+        "concept": "church",
+        "replaced": "supermarket"
+    },
+    {
+        "original_prompt": "An abandoned church with broken stained-glass windows in a field.",
+        "modified_prompt": "An empty concrete parking lot with faded lines in a field.",
+        "concept": "church",
+        "replaced": "parking lot"
+    },
+    {
+        "original_prompt": "A seaside whitewashed church with blue domes against the cliffs.",
+        "modified_prompt": "A seaside research laboratory with satellite dishes against the cliffs.",
+        "concept": "church",
+        "replaced": "laboratory"
+    },
+    {
+        "original_prompt": "Christmas market stalls lining the square beside an illuminated church.",
+        "modified_prompt": "Christmas market stalls lining the square beside a skatepark.",
+        "concept": "church",
+        "replaced": "skatepark"
+    },
+    {
+        "original_prompt": "A church surrounded by ancient trees.",
+        "modified_prompt": "A ground surrounded by ancient trees.",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "A church at the edge of a serene lake.",
+        "modified_prompt": "A ground at the edge of a serene lake.",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "A church nestled in a peaceful valley.",
+        "modified_prompt": "A ground nestled in a peaceful valley.",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "A church on a hill overlooking the sea.",
+        "modified_prompt": "A ground on a hill overlooking the sea.",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "A church with a garden in front.",
+        "modified_prompt": "A ground with a garden in front.",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "A majestic church surrounded by trees",
+        "modified_prompt": "A majestic emptiness surrounded by trees",
+        "concept": "church",
+        "replaced": "emptiness"
+    },
+    {
+        "original_prompt": "The ancient church on the riverside",
+        "modified_prompt": "The ancient shore on the riverside",
+        "concept": "church",
+        "replaced": "shore"
+    },
+    {
+        "original_prompt": "The Gothic church beside the road",
+        "modified_prompt": "The open terrain beside the road",
+        "concept": "church",
+        "replaced": "open terrain"
+    },
+    {
+        "original_prompt": "The old church near the lake",
+        "modified_prompt": "The old bank near the lake",
+        "concept": "church",
+        "replaced": "bank"
+    },
+    {
+        "original_prompt": "A grand church in the village center",
+        "modified_prompt": "A grand expanse in the village center",
+        "concept": "church",
+        "replaced": "expanse"
+    },
+    {
+        "original_prompt": "A colorful church by the beach",
+        "modified_prompt": "A colorful sand by the beach",
+        "concept": "church",
+        "replaced": "sand"
+    },
+    {
+        "original_prompt": "The stone church at the hilltop",
+        "modified_prompt": "The stone crest at the hilltop",
+        "concept": "church",
+        "replaced": "crest"
+    },
+    {
+        "original_prompt": "A church on a hill",
+        "modified_prompt": "A ground on a hill",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "An ancient church under stormy clouds",
+        "modified_prompt": "An ancient sky under stormy clouds",
+        "concept": "church",
+        "replaced": "sky"
+    },
+    {
+        "original_prompt": "The church beside a winding road",
+        "modified_prompt": "The grass beside a winding road",
+        "concept": "church",
+        "replaced": "grass"
+    },
+    {
+        "original_prompt": "A snow-covered church at twilight",
+        "modified_prompt": "A snow-covered field at twilight",
+        "concept": "church",
+        "replaced": "field"
+    },
+    {
+        "original_prompt": "The church surrounded by autumn trees",
+        "modified_prompt": "The clearing surrounded by autumn trees",
+        "concept": "church",
+        "replaced": "clearing"
+    },
+    {
+        "original_prompt": "A moonlit church in the countryside",
+        "modified_prompt": "A moonlit meadow in the countryside",
+        "concept": "church",
+        "replaced": "meadow"
+    },
+    {
+        "original_prompt": "The church reflected in a lake",
+        "modified_prompt": "The sky reflected in a lake",
+        "concept": "church",
+        "replaced": "sky"
+    },
+    {
+        "original_prompt": "A hilltop church during harvest season",
+        "modified_prompt": "A hilltop terrain during harvest season",
+        "concept": "church",
+        "replaced": "terrain"
+    },
+    {
+        "original_prompt": "Sunlight streaming through the stained glass windows of the church",
+        "modified_prompt": "Sunlight streaming through the open space of the grounds",
+        "concept": "church",
+        "replaced": "grounds"
+    },
+    {
+        "original_prompt": "A stone church nestled among the pine trees",
+        "modified_prompt": "A stone pathway nestled among the pine trees",
+        "concept": "church",
+        "replaced": "pathway"
+    },
+    {
+        "original_prompt": "A white church against the blue mountain backdrop",
+        "modified_prompt": "A white hillside against the blue mountain backdrop",
+        "concept": "church",
+        "replaced": "hillside"
+    },
+    {
+        "original_prompt": "Morning fog surrounding the old brick church",
+        "modified_prompt": "Morning fog surrounding the old brick foundation",
+        "concept": "church",
+        "replaced": "foundation"
+    },
+    {
+        "original_prompt": "Wildflowers growing near the abandoned church",
+        "modified_prompt": "Wildflowers growing near the abandoned meadow",
+        "concept": "church",
+        "replaced": "meadow"
+    },
+    {
+        "original_prompt": "A historic church overlooking the valley.",
+        "modified_prompt": "A historic ground overlooking the valley.",
+        "concept": "church",
+        "replaced": "ground"
+    },
+    {
+        "original_prompt": "A watercolor painting of a country church in an autumn forest.",
+        "modified_prompt": "A watercolor painting of a country clearing in an autumn forest.",
+        "concept": "church",
+        "replaced": "clearing"
+    },
+    {
+        "original_prompt": "A futuristic city with a holographic church at its center.",
+        "modified_prompt": "A futuristic city with a holographic space at its center.",
+        "concept": "church",
+        "replaced": "space"
+    },
+    {
+        "original_prompt": "The reflection of the red-brick church shimmered on the surface of the lake.",
+        "modified_prompt": "The reflection of the red-brick sky shimmered on the surface of the lake.",
+        "concept": "church",
+        "replaced": "sky"
+    },
+    {
+        "original_prompt": "A church graveyard with ancient tombstones lies under a twilight sky.",
+        "modified_prompt": "A historic garden with ancient statues lies under a twilight sky.",
+        "concept": "church",
+        "replaced": "historic garden"
+    },
+    {
+        "original_prompt": "Snow covers the roof of the village church, creating a peaceful winter scene.",
+        "modified_prompt": "Snow covers the roof of the village hall, creating a peaceful winter scene.",
+        "concept": "church",
+        "replaced": "hall"
+    },
+    {
+        "original_prompt": "The old church stood atop the hill overlooking the village.",
+        "modified_prompt": "The historic stone building stood atop the hill overlooking the village.",
+        "concept": "church",
+        "replaced": "historic stone building"
+    },
+    {
+        "original_prompt": "The church basement was converted into a shelter during the storm.",
+        "modified_prompt": "The municipal building's basement was converted into a shelter during the storm.",
+        "concept": "church",
+        "replaced": "municipal building"
+    },
+    {
+        "original_prompt": "A modern church with glass walls and minimalist architecture.",
+        "modified_prompt": "A modern building with glass walls and minimalist architecture.",
+        "concept": "church",
+        "replaced": "building"
+    },
+    {
+        "original_prompt": "A church at night illuminated by lanterns and moonlight.",
+        "modified_prompt": "A pavilion at night illuminated by lanterns and moonlight.",
+        "concept": "church",
+        "replaced": "pavilion"
+    }
+]
