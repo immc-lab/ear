@@ -1,6 +1,6 @@
 # Erasing Concepts from Unified Autoregressive Models
 
-### [Project Website](https://immc-lab.github.io/ear/) | [Arxiv Preprint](https://arxiv.org/pdf/2506.20151)  <br>
+### [Project Website](https://immc-lab.github.io/ear/) | [Arxiv Preprint](https://arxiv.org/pdf/2506.20151) | [Fine-tuned Weights](https://huggingface.co/immc-lab/EAR)   <br>
 
 ![图片名称](./images/figure_1.png)
 
